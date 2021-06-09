@@ -31,3 +31,13 @@ JOIN dept_emp as de
 	ON e.emp_no=de.emp_no
 JOIN titles as t
 	ON e.emp_no=t.emp_no
+WHERE (e.birth_date BETWEEN '1955-01-01' AND '1955-12-31')
+ORDER BY emp_no;
+
+--Determine the total number of retiring employees
+SELECT SUM(count) as "Total Retiring Employees"
+FROM retiring_titles;
+
+--Determine the total number of employees eligible for mentorship
+SELECT COUNT(emp_no) 
+FROM mentorship_eligibility;
